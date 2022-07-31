@@ -9,7 +9,7 @@ import tensorflow as tf
 app = FastAPI()
 
 MODEL = tf.keras.models.load_model("../models/Model_2_FileVER")
-CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn Healthy", "Potato Early Blight", "Potato Late Blight", 
+CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn Healthy", "Potato Early Blight", "Potato Late Blight",
                "Potato Healthy", "Rice Bacterial Leaf Blight", "Rice Brown Spot", "Rice Healthy", "Rice Leaf Smut",
                "Rice Septoria", "Tomato Bacterial Spot", "Tomato Early Blight", "Tomato Late Blight", "Tomato Healthy"]
 
@@ -18,9 +18,11 @@ CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn 
 async def ping():
     return "Hello, I am alive"
 
+
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
     return image
+
 
 @app.post("/predict")
 async def predict(
@@ -28,7 +30,7 @@ async def predict(
 ):
     image = read_file_as_image(await file.read())
     img_batch = np.expand_dims(image, 0)
-    
+
     predictions = MODEL.predict(img_batch)
 
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
@@ -37,8 +39,9 @@ async def predict(
     return {
         'class': predicted_class,
         'confidence': float(confidence)
+        # 'confidence': f"{float(confidence) * 100}%"
     }
-  
+
 
 if __name__ == "__main__":
-  uvicorn.run(app, host="localhost", port="8000")
+    uvicorn.run(app, host="localhost", port="8000")
