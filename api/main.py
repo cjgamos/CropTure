@@ -8,7 +8,8 @@ import tensorflow as tf
 
 app = FastAPI()
 
-MODEL = tf.keras.models.load_model("../models/Model_2_FileVER")
+MODEL = tf.keras.models.load_model("../models/1")
+
 CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn Healthy", "Potato Early Blight", "Potato Late Blight",
                "Potato Healthy", "Rice Bacterial Leaf Blight", "Rice Brown Spot", "Rice Healthy", "Rice Leaf Smut",
                "Rice Septoria", "Tomato Bacterial Spot", "Tomato Early Blight", "Tomato Late Blight", "Tomato Healthy"]
@@ -39,7 +40,6 @@ async def predict(
     return {
         'class': predicted_class,
         'confidence': float(confidence)
-        # 'confidence': f"{float(confidence) * 100}%"
     }
 
 
