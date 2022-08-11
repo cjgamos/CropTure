@@ -21,19 +21,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Remember this is connected into the /models.config name
 endpoint = "http://localhost:8501/v1/models/CropTure:predict"
 
 CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn Healthy", "Potato Early Blight", "Potato Late Blight",
                "Potato Healthy", "Rice Bacterial Leaf Blight", "Rice Brown Spot", "Rice Healthy", "Rice Leaf Smut",
                "Rice Septoria", "Tomato Bacterial Spot", "Tomato Early Blight", "Tomato Late Blight", "Tomato Healthy"]
 
+
 @app.get("/ping")
 async def ping():
     return "Hello, I am alive"
 
+
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
     return image
+
 
 @app.post("/predict")
 async def predict(
@@ -59,4 +63,3 @@ async def predict(
 
 if __name__ == "__main__":
     uvicorn.run(app, host='localhost', port=8000)
-
