@@ -27,7 +27,7 @@ Then go to Body > Pick *form-data* > add a **Key** named "file", then in the val
 
 > Response should look something like this.
 
-![image1](screenshots\image1.png)
+![image1](https://github.com/cjgamos/CropTure/blob/main/screenshots/image1.png)
 
 If everything works fine then you are good to go. 
 
