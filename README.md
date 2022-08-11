@@ -4,7 +4,7 @@ An application that classifies crop diseases and give details about the disease 
 
 ## Things to take note
 
-> Install Docker, Run `Docker`, Then Run the Following:
+> Install Docker, Start `Docker`, Then Run the Following:
 
 ```
 docker run -t -rm -p <port>:<port> -v <directory>:<docker directory> tensorflow/serving --rest_api_port=<port> --model_config_file=<models.config directory>
