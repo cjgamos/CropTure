@@ -25,6 +25,7 @@ def read_file_as_image(data) -> np.ndarray:
     return image
 
 
+
 @app.post("/predict")
 async def predict(
     file: UploadFile = File(...)
