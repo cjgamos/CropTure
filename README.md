@@ -1,4 +1,4 @@
-# CropTure V2
+# CropTure
 
 An application that classifies crop diseases and give details about the disease and solutions on how to prevent and cure them.
 
