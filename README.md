@@ -19,7 +19,7 @@ docker run -t --rm -p 8501:8501 -v C:/Development/CropTure:/CropTure tensorflow/
 > Make sure to check models.config and rename the `name` column base on the code.
 
 After doing all the process make a postman check using the URL below:
-> http://localhost:8000/predict
+> http://localhost:8001/predict
 
 Make sure to get a new request using **POST** method.
 
