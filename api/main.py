@@ -8,6 +8,18 @@ import tensorflow as tf
 
 app = FastAPI()
 
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 MODEL = tf.keras.models.load_model("../models/1")
 
 CLASS_NAMES = ["Corn Blight", "Corn Common Rust", "Corn Grey Leaf Spots", "Corn Healthy", "Potato Early Blight", "Potato Late Blight",

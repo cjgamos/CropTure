@@ -13,7 +13,7 @@ docker run -t -rm -p <port>:<port> -v <directory>:<docker directory> tensorflow/
 Example:
 
 ```
-docker run -t --rm -p 8501:8501 -v C:/Development/CropTure:/CropTure tensorflow/serving --rest_api_port=8501 --model_config_file=/CropTure/models.config
+sudo docker run -t --rm -p 8501:8501 -v /home/carl/Documents/Development/CropTure:/CropTure tensorflow/serving --rest_api_port=8501 --model_config_file=/CropTure/models.config
 ```
 
 > Make sure to check models.config and rename the `name` column base on the code.
