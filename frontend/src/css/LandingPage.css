@@ -1,0 +1,144 @@
+body {
+  background-color: #fef9ea;
+}
+
+p {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #376b4d;
+  text-decoration: none;
+}
+
+.backgroundLandingPage {
+  background-image: url("../img/bg1.png");
+
+  min-height: 1000px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backgroundLandingPage2 {
+  background-image: url("../img/bg5.png");
+
+  min-height: 1000px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-1 {
+  text-align: center;
+  padding-top: 5%;
+  /* padding: 5% 0 80% 0; */
+}
+
+.content-1 h3 {
+  color: #aebbae;
+}
+
+.content-1 h1 {
+  color: #376b4d;
+}
+
+.content-2 {
+  text-align: center;
+  /* padding-top: 5%;
+  padding-bottom: 5%; */
+  padding: 5% 0;
+}
+
+.content-2 h3 {
+  color: #98bb58;
+}
+
+.content-2 h1 {
+  color: #fef9ea;
+}
+
+.about-content-1 {
+  display: flex;
+  padding-top: 15%;
+  /* padding-bottom: 20%; */
+  color: #376b4d;
+  width: 60%;
+  margin: auto;
+}
+
+.about-content-1 img {
+  width: 100%;
+}
+
+.about-content-1 div {
+  text-align: center;
+}
+
+.about-content-1 h1 {
+  padding-bottom: 10%;
+}
+
+.about-content-1 p {
+  width: 80%;
+  margin: auto;
+}
+
+.about-content-2 {
+  display: flex;
+  padding-top: 15%;
+  padding-bottom: 20%;
+  color: #376b4d;
+  width: 60%;
+  margin: auto;
+}
+
+.about-content-2 img {
+  width: 100%;
+}
+
+.about-content-2 div {
+  text-align: center;
+}
+
+.about-content-2 h1 {
+  padding-bottom: 10%;
+}
+
+.about-content-2 p {
+  width: 80%;
+  margin: auto;
+}
+
+.howto-content-1 {
+  background-color: #fef9ea;
+  border-radius: 10px;
+  display: flex;
+  /* padding-top: 15%; */
+  /* padding-bottom: 20%; */
+  color: #376b4d;
+  width: 60%;
+  margin: auto;
+}
+
+.howto-content-1 img {
+  margin: auto;
+  width: 100%;
+}
+
+.howto-content-1 div {
+  padding: 10%;
+  text-align: center;
+}
+
+.howto-content-1 h1 {
+  padding-bottom: 10%;
+}
+
+.howto-content-1 p {
+  width: 90%;
+  margin: auto;
+}
