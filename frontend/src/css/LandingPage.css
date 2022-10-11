@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #fef9ea;
 }
@@ -13,7 +17,7 @@ p {
 .backgroundLandingPage {
   background-image: url("../img/bg1.png");
 
-  min-height: 1000px;
+  min-height: 900px;
 
   background-attachment: fixed;
   background-position: center;
@@ -24,7 +28,7 @@ p {
 .backgroundLandingPage2 {
   background-image: url("../img/bg5.png");
 
-  min-height: 1000px;
+  min-height: 2000px;
 
   background-attachment: fixed;
   background-position: center;
@@ -122,6 +126,19 @@ p {
   color: #376b4d;
   width: 60%;
   margin: auto;
+  transition: all 0.3s ease 0s;
+}
+
+.howto-content-2 {
+  background-color: #fef9ea;
+  border-radius: 10px;
+  display: flex;
+  /* padding-top: 15%; */
+  /* padding-bottom: 20%; */
+  color: #376b4d;
+  width: 60%;
+  margin: 5% auto;
+  transition: all 0.3s ease 0s;
 }
 
 .howto-content-1 img {
@@ -130,7 +147,7 @@ p {
 }
 
 .howto-content-1 div {
-  padding: 10%;
+  padding: 10% 3%;
   text-align: center;
 }
 
@@ -141,4 +158,29 @@ p {
 .howto-content-1 p {
   width: 90%;
   margin: auto;
+}
+
+.howto-content-2 img {
+  margin: auto;
+  width: 100%;
+}
+
+.howto-content-2 div {
+  padding: 10% 3%;
+  text-align: center;
+}
+
+.howto-content-2 h1 {
+  padding-bottom: 10%;
+}
+
+.howto-content-2 p {
+  width: 90%;
+  margin: auto;
+}
+
+.howto-content-1:hover,
+.howto-content-2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
 }

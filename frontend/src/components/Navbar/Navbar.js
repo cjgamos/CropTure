@@ -1,5 +1,6 @@
 import React from "react"
 import cblogo from "../../img/cblogo.PNG"
+import { Outlet, Link } from "react-router-dom"
 import "./Navbar.css"
 
 function Navbar() {
@@ -14,18 +15,20 @@ function Navbar() {
         <nav>
           <ul className='nav_links'>
             <li>
-              <a href='#home'>Home</a>
+              <Link to='/#home'>Home</Link>
             </li>
             <li>
-              <a href='#about'>About</a>
+              <a href='/#about'>About</a>
             </li>
             <li>
-              <a href='#howto'>How To Use</a>
+              <a href='/#howto'>How To Use</a>
             </li>
           </ul>
         </nav>
         <a className='cta' href='/app'>
-          <button>Start</button>
+          <button>
+            <Link to='/app'>Start</Link>
+          </button>
         </a>
       </header>
     </>

@@ -28,6 +28,8 @@ import { DropzoneArea } from "material-ui-dropzone"
 import { common } from "@material-ui/core/colors"
 import Clear from "@material-ui/icons/Clear"
 
+require("dotenv").config()
+
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(common.white),
@@ -218,6 +220,7 @@ export const ImageUpload = () => {
     confidence = (parseFloat(data.confidence) * 100).toFixed(2)
   }
 
+  
   return (
     <React.Fragment>
       {/* <AppBar position='static' className={classes.appbar}>
