@@ -1,5 +1,6 @@
 import React from "react"
 import "../css/LandingPage.css"
+import cblogo from "../img/cblogo.PNG"
 import vaselogo from "../img/vase.png"
 import howto1 from "../img/howto1.png"
 
@@ -7,7 +8,15 @@ function LandingPage() {
   return (
     <>
       <body>
-        <div className='backgroundLandingPage' id='home'></div>
+        <div className='backgroundLandingPage' id='home'>
+          <img src={cblogo} alt='' />
+          <h1>Farmer's Daily Aiding Tool</h1>
+          <hr />
+          <h2>
+            WEB-BASED CROPS DISEASE DETECTION AND CLASSIFICATION USING DEEP
+            LEARNING
+          </h2>
+        </div>
 
         <div className='content-1' id='about'>
           <h3>ABOUT</h3>
@@ -86,6 +95,9 @@ function LandingPage() {
           </div>
         </div>
       </body>
+      <footer>
+        <h4>Thesis Capstone</h4>© 2022 CS61
+      </footer>
     </>
   )
 }

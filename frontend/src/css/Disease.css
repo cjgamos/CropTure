@@ -1,0 +1,238 @@
+:root {
+  --Blight: url("../img/BLIGHT.png");
+  --CommonRust: url("../img/COMMON\ RUST.png");
+  --GrayLeafSpot: url("../img/LEAF\ SPOT.png");
+  --EarlyBlight: url("../img/TOMATO\ EARLY\ BLIGHT.png");
+  --LateBlight: url("../img/TOMATO\ LATE\ BLIGHT.png");
+  --BacterialLeafBlight: url("../img/Rice\ bacterial\ leaf\ blight.png");
+  --BrownSpot: url("../img/Rice\ Brown\ spot.png");
+  --LeafSmut: url("../img/Rice\ Leaf\ smut.png");
+  --Septoria: url("../img/Septoria.png");
+  --BacterialSpot: url("../img/Tomato\ Bacterial\ Spot.png");
+}
+
+.disease-body {
+  overflow: hidden;
+  background-image: url("../img/bg1.png");
+
+  min-height: 455vh;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.explore-title {
+  /* width: ; */
+  /* background-color: #fef9ea; */
+  color: #fef9ea;
+  text-align: center;
+  padding: 2% 0;
+}
+
+.list-content {
+  border-radius: 60px 0 60px 0;
+  margin: 0 0 0 5%;
+  background-color: #fef9ea;
+  width: 30%;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.list-title {
+  color: #376b4d;
+  padding: 7% 0;
+  text-align: center;
+}
+
+.disease-content {
+  border-radius: 10px;
+  /* position: relative; */
+  /* margin: 0 3%; */
+  /* background-color: #fef9ea; */
+  height: 130vh;
+  width: 70%;
+  /* float: right; */
+}
+
+.disease-content h1 {
+  color: #376b4d;
+}
+
+.disease-explore {
+  padding-bottom: 5%;
+  display: flex;
+}
+
+.disease-title {
+  color: #fef9ea !important;
+  padding: 3% 0;
+  text-align: center;
+}
+
+.list-content-link {
+  /* padding-left: 5%; */
+  text-align: center;
+  /* margin: 0 0 0 40%; */
+}
+
+.list-content-link li {
+  margin: 8% 0;
+  list-style: none;
+}
+
+.list-content-link li a {
+  transition: all 0.3s ease 0s;
+  color: #376b4d;
+}
+
+.list-content-link li a:hover {
+  color: #1190cb;
+}
+
+.disease-image {
+  border-radius: 50%;
+  min-height: 120px;
+  max-height: auto;
+  height: auto;
+  width: 200px;
+  max-width: 100%;
+  margin: 5% 2%;
+
+  float: left;
+  /* margin-right: 30px; */
+  border: solid 2px #376b4d;
+}
+
+.disease-content .disease {
+  margin: 5% auto;
+}
+
+/* Diseases */
+
+/* Left */
+
+.disease-left {
+  /* background-image: var(--Blight); */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 60px 0 60px 0;
+  margin: auto;
+  background-color: #fef9ea;
+  height: 35vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.disease-left-content {
+  padding-right: 5%;
+}
+
+.disease-left-content p {
+  /* padding: 20px; */
+  text-align: justify;
+  /* text-indent: 10%; */
+}
+
+.left-title {
+  text-align: left;
+  padding: 1% 0;
+}
+
+/* Right */
+
+.disease-right {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 60px 0 60px 0;
+  margin: auto;
+  background-color: #fef9ea;
+  height: 35vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.disease-right-content {
+  padding-left: 5%;
+}
+
+.disease-right-content p {
+  text-align: justify;
+}
+
+.right-title {
+  text-align: right;
+  padding: 1% 0;
+}
+
+/* Blight */
+
+.blight {
+  background-image: var(--Blight);
+}
+
+/* Common Rust */
+
+.common-rust {
+  background-image: var(--CommonRust);
+}
+
+/* Leaf Spot */
+
+.leaf-spot {
+  background-image: var(--GrayLeafSpot);
+}
+
+/* Early Blight */
+
+.early-blight {
+  background-image: var(--EarlyBlight);
+}
+
+/* Late Blight */
+
+.late-blight {
+  background-image: var(--LateBlight);
+}
+
+/* Bacterial Leaf Blight */
+
+.bacterial-leaf-blight {
+  background-image: var(--BacterialLeafBlight);
+}
+
+/* Brown Spot */
+
+.brown-spot {
+  background-image: var(--BrownSpot);
+}
+
+/* Leaf Smut */
+
+.leaf-smut {
+  background-image: var(--LeafSmut);
+}
+
+/* Septoria */
+
+.septoria {
+  background-image: var(--Septoria);
+}
+
+/* Bacterial Spot */
+
+.bacterial-spot {
+  background-image: var(--BacterialSpot);
+}
+
+.activate {
+  color: #1190cb !important;
+}
