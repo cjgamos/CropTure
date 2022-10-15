@@ -41,6 +41,7 @@
 }
 
 .list-title {
+  font-size: 2em;
   color: #376b4d;
   padding: 7% 0;
   text-align: center;
@@ -61,6 +62,7 @@
 }
 
 .disease-explore {
+  margin: 2% 0 0 0;
   padding-bottom: 5%;
   display: flex;
 }

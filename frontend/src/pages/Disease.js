@@ -41,10 +41,10 @@ function Disease() {
 
   return (
     <div className='disease-body'>
-      <h1 className='explore-title'> Explore</h1>
+      {/* <h1 className='explore-title'> Explore</h1> */}
       <div className='disease-explore' id='explore'>
         <nav className='list-content' id='list-sticky' ref={ref}>
-          <h1 className='list-title'>List</h1>
+          <h1 className='list-title'>Common Diseases</h1>
           <ul className='list-content-link'>
             <li>
               <a href='#blight'>Blight</a>
@@ -80,23 +80,23 @@ function Disease() {
         </nav>
 
         <div className='disease-content' ref={des}>
-          <h1 className='disease-title'>Diseases</h1>
+          {/* <h1 className='disease-title'>Diseases</h1> */}
 
           <div className='disease-left disease blight' id='blight'>
             <img src={Blight} alt='' className='disease-image' />
             <div className='disease-left-content'>
               <h1 className='left-title'>Blight</h1>
               <p>
-                Plant blight is a common disease. Remember the potato famine in
-                the 1840’s? As a result of the blight, one million people died.
-                But other than potatoes, blight also affects other plants,
-                particularly tomatoes. Blight is a fungal disease that spreads
-                through spores that are windborne. For this reason, spores can
-                cover large areas and rapidly spread the infection. Blight can
-                only spread under warm humid conditions, especially with two
-                consecutive days of temps above 50°F, and humidity above 90% for
-                eleven hours or more. No cure exists. Prevention is the only
-                option.
+                Plant blight is a widespread disease. Remember the potato famine
+                of the 1930s? the 1840’s? One million people died as a result of
+                the blight. However, blight affects plants other than potatoes.
+                Especially tomatoes. Blight is a contagious fungal disease. by
+                means of windborne spores As a result, spores can Cover a large
+                area and spread the infection quickly. Blight can occur. only
+                spreads in warm, humid conditions, particularly with two
+                consecutive days with temperatures above 50°F and humidity
+                levels above 90% for eleven or more hours There is no cure.
+                Prevention is the only option. option.
               </p>
             </div>
           </div>
@@ -105,15 +105,16 @@ function Disease() {
             <div className='disease-right-content'>
               <h1 className='right-title'>Common Rust</h1>
               <p>
-                Caused by the fungus Puccinia sorghi and occurs every growing
-                season. It is seldom a concern in hybrid corn. Rust pustules
-                usually first appear in late June. Early symptoms of common rust
-                are chlorotic flecks on the leaf surface. These soon develop
-                into powdery, brick-red pustules as the spores break through the
-                leaf surface. Pustules are oval or elongated, about 1/8 inch
-                long, and scattered sparsely or clustered together. The leaf
-                tissue around the pustules may become yellow or die, leaving
-                lesions of dead tissue.
+                Every growing season, caused by the fungus Puccinia sorghi.
+                season. It is rarely an issue in hybrid corn. Pustules of rust
+                Typically, they first appear in late June. Early signs of common
+                rust are chlorotic flecks on the surface of the leaf These
+                emerge quickly. As the spores break through the skin, they turn
+                into powdery, brick-red pustules. surface of the leaf Pustules
+                are about 1/8 inch long and oval or elongated. long, and
+                sparsely scattered or clustered together The plant's leaf The
+                tissue surrounding the pustules may turn yellow or die, leaving
+                a scar. Dead tissue lesions
               </p>
             </div>
             <img src={CommonRust} alt='' className='disease-image' />
@@ -124,12 +125,11 @@ function Disease() {
             <div className='disease-left-content'>
               <h1 className='left-title'>Leaf Spot</h1>
               <p>
-                Gray leaf spot is typically the most serious foliar disease of
-                corn in the U.S. corn belt, although other diseases can be more
-                important in areas and years where weather conditions do not
-                favor gray leaf spot. Gray leaf spot requires extended periods
-                of high humidity and warm conditions. It can be confused with
-                other foliar diseases of corn.
+                Gray leaf spot is the most serious foliar disease. Although
+                other diseases can be more severe. Gray leaf spot usually
+                requires prolonged treatment. of high humidity and warm
+                temperatures It is similar to but not the same as other corn
+                fungicide diseases.
               </p>
             </div>
           </div>
@@ -138,11 +138,12 @@ function Disease() {
             <div className='disease-right-content'>
               <h1 className='right-title'>Early Blight</h1>
               <p>
-                Early blight is primarily a disease of stressed or senescing
-                plants. Symptoms appear first on the oldest foliage. Affected
-                leaves develop circular to angular dark brown lesions 0.12 to
-                0.16 inch (3–4 mm) in diameter. Concentric rings often form in
-                lesions to produce characteristic target-board effect.
+                Early blight is primarily a stress or aging disease. plants.
+                Symptoms first appear on the oldest foliage. Affected Lesions on
+                the leaves range from circular to angular and are dark brown in
+                color. The diameter is 0.16 inch (3-4 mm). Concentric rings
+                frequently form in lesions to produce the typical target-board
+                effect
               </p>
             </div>
             <img src={EarlyBlight} alt='' className='disease-image' />
@@ -153,11 +154,11 @@ function Disease() {
             <div className='disease-left-content'>
               <h1 className='left-title'>Late Blight</h1>
               <p>
-                Late blight is caused by the fungal-like oomycete pathogen
-                Phytophthora infestans. The primary host is potato, but P.
-                infestans also can infect other solanaceous plants, including
-                tomatoes, petunias and hairy nightshade. These infected species
-                can act as source of inoculum to potato.
+                The pathogen responsible for late blight is a fungal-like
+                oomycete. Infestans Phytophthora Potato is the primary host, but
+                P. Infestans can also infect other solanaceous plants, such as
+                Hairy nightshade, tomatoes, and petunias These infected animals
+                can serve as a source of inoculum for potatoes
               </p>
             </div>
           </div>
@@ -169,11 +170,11 @@ function Disease() {
             <div className='disease-right-content'>
               <h1 className='right-title'>Bacterial Leaf Blight</h1>
               <p>
-                These spots are caused by a fungus, usually as a result of
-                overwatering your plant. Solution: You may be able to fix this
-                by cutting off affected leaves and letting your plant's soil dry
-                out. In future, only water when the top two inches of soil feel
-                dry.
+                These spots are caused by a fungus, and they usually appear as a
+                result of You are overwatering your plant. You might be able to
+                fix this. by removing affected leaves and allowing your plant's
+                soil to dry out. Only water when the top two inches of soil feel
+                dry in the future. dry.
               </p>
             </div>
             <img src={BacterialLeafBlight} alt='' className='disease-image' />
@@ -184,14 +185,12 @@ function Disease() {
             <div className='disease-left-content'>
               <h1 className='left-title'>Brown Spot</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                illo aliquid nihil. Cumque provident beatae corporis sequi enim,
-                officia nesciunt quia labore ad similique. Architecto sapiente
-                dolore beatae labore impedit. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Sed sunt illum cumque fugiat
-                praesentium cum inventore numquam perferendis rerum consequatur
-                unde laborum, distinctio voluptate vel reprehenderit aliquid!
-                Obcaecati, quia nam.
+                Brown spot is a fungal disease affecting coleoptiles, leaves,
+                leaf sheath, panicle branches, glumes and spikelets. The most
+                noticeable damage is the numerous large spots on the leaves,
+                which can kill the entire leaf. When infection occurs in the
+                seed, unfilled kernels or spotted or discolored seeds are
+                formed.
               </p>
             </div>
           </div>
@@ -200,11 +199,12 @@ function Disease() {
             <div className='disease-right-content'>
               <h1 className='right-title'>Leaf Smut</h1>
               <p>
-                Leaf smut This is a minor fungal disease in which small slightly
-                raised black spots develop primarily on the leaves. Raised spots
-                or pustules break open releasing air-borne spores. Infection is
-                often heavy enough to kill tips of leaves. Leaf smut occurs late
-                in the growing season and causes little or no economic loss.
+                Leaf smut is a minor fungal disease caused by small slightly
+                Raised black spots appear mostly on the leaves. Raised areas or
+                pustules burst, releasing airborne spores Infection is a
+                disease. It is frequently heavy enough to kill the tips of
+                leaves. Late leaf smut occurs. During the growing season, there
+                is little or no economic loss.
               </p>
             </div>
             <img src={LeafSmut} alt='' className='disease-image' />
@@ -215,11 +215,11 @@ function Disease() {
             <div className='disease-left-content'>
               <h1 className='left-title'>Septoria</h1>
               <p>
-                Septoria are ascomycete pycnidia-producing fungi that cause
-                numerous leaf spot diseases on field crops, forages and many
-                vegetables including tomatoes which are known to contract
-                Septoria musiva from nearby cottonwood trees, and is responsible
-                for yield losses.
+                Septoria are pycnidia-producing ascomycete fungi that cause many
+                leaf spot diseases on field crops, forages, and other crops
+                vegetables, such as tomatoes, are known to contract Septoria
+                musiva is found in nearby cottonwood trees and is responsible
+                for because of yield losses
               </p>
             </div>
           </div>
@@ -231,12 +231,11 @@ function Disease() {
             <div className='disease-right-content'>
               <h1 className='right-title'>Bacterial Spot</h1>
               <p>
-                Bacterial spot of tomato is a potentially devastating disease
-                that, in severe cases, can lead to unmarketable fruit and even
-                plant death. Bacterial spot can occur wherever tomatoes are
-                grown, but is found most frequently in warm, wet climates, as
-                well as in greenhouses. The disease is often an issue in
-                Wisconsin.
+                Tomato bacterial spot is a potentially lethal disease. which, in
+                extreme cases, can result in unmarketable fruit and even Plant
+                demise Bacterial spot can occur anywhere tomatoes are grown.
+                grown, but it is most common in warm, wet climates, as as well
+                as greenhouse.
               </p>
             </div>
             <img src={BacterialSpot} alt='' className='disease-image' />

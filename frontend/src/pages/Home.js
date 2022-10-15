@@ -28,6 +28,8 @@ import { DropzoneArea } from "material-ui-dropzone"
 import { common } from "@material-ui/core/colors"
 import Clear from "@material-ui/icons/Clear"
 
+import "../css/Home.css"
+
 require("dotenv").config()
 
 const ColorButton = withStyles((theme) => ({
@@ -52,13 +54,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#000000a6",
     fontSize: "20px",
     fontWeight: 900,
+    margin: "auto",
   },
   root: {
     maxWidth: 345,
     flexGrow: 1,
   },
   media: {
-    height: 400,
+    height: 300,
   },
   paper: {
     padding: theme.spacing(2),
@@ -67,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     justifyContent: "center",
-    padding: "4em 1em 0 1em",
+    padding: "4% 0",
+    // backgroundColor: "blue"
   },
   mainContainer: {
     backgroundImage: `url(${image})`,
@@ -79,9 +83,8 @@ const useStyles = makeStyles((theme) => ({
   },
   imageCard: {
     margin: "auto",
-    maxWidth: 400,
-    height: 500,
-    backgroundColor: "transparent",
+    maxWidth: 1000,
+    backgroundColor: "#376b4d",
     boxShadow: "0px 9px 70px 0px rgb(0 0 0 / 30%) !important",
     borderRadius: "15px",
   },
@@ -140,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   detail: {
-    backgroundColor: "white",
+    backgroundColor: "#fef9ea",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
@@ -163,6 +166,12 @@ export const ImageUpload = () => {
   const [image, setImage] = useState(false)
   const [isLoading, setIsloading] = useState(false)
   let confidence = 0
+
+  // data variable
+  let definition
+  let solution
+  let tagalog_definition
+  let tagalog_solution
 
   const sendFile = async () => {
     if (image) {
@@ -218,135 +227,264 @@ export const ImageUpload = () => {
 
   if (data) {
     confidence = (parseFloat(data.confidence) * 100).toFixed(2)
+
+    definition = data.definition
+    solution = data.solution
+    tagalog_definition = data.tagalog_definition
+    tagalog_solution = data.tagalog_solution
   }
 
-  
   return (
-    <React.Fragment>
-      {/* <AppBar position='static' className={classes.appbar}>
-        <Toolbar>
-          <Typography className={classes.title} variant='h6' noWrap>
-            CodeBasics: Potato Disease Classification
-          </Typography>
-          <div className={classes.grow} />
-          <Avatar src={cblogo}></Avatar>
-        </Toolbar>
-      </AppBar> */}
-      <Container
-        maxWidth={false}
-        className={classes.mainContainer}
-        disableGutters={true}
+    // <React.Fragment>
+    //   <Container
+    //     maxWidth={false}
+    //     className={classes.mainContainer}
+    //     disableGutters={true}
+    //   >
+    //     <Grid
+    //       className={classes.gridContainer}
+    //       container
+    //       direction='row'
+    //       justifyContent='center'
+    //       alignItems='center'
+    //       spacing={2}
+    //     >
+    //       <Grid item xs={12}>
+    //         <Card
+    //           className={`${classes.imageCard} ${
+    //             !image ? classes.imageCardEmpty : ""
+    //           }`}
+    //         >
+    //           {image && (
+    //             <CardActionArea>
+    //               <CardMedia
+    //                 className={classes.media}
+    //                 image={preview}
+    //                 component='image'
+    //                 title='Contemplative Reptile'
+    //               />
+    //             </CardActionArea>
+    //           )}
+    //           {!image && (
+    //             <CardContent className={classes.content}>
+    //               <DropzoneArea
+    //                 acceptedFiles={["image/*"]}
+    //                 dropzoneText={
+    //                   "Drag and drop an image of a potato plant leaf to process"
+    //                 }
+    //                 onChange={onSelectFile}
+    //               />
+    //             </CardContent>
+    //           )}
+    //           {data && (
+    //             <CardContent className={classes.detail}>
+    //               <TableContainer
+    //                 component={Paper}
+    //                 className={classes.tableContainer}
+    //               >
+    //                 <Table
+    //                   className={classes.table}
+    //                   size='small'
+    //                   aria-label='simple table'
+    //                 >
+    //                   <TableHead className={classes.tableHead}>
+    //                     <TableRow className={classes.tableRow}>
+    //                       <TableCell className={classes.tableCell1}>
+    //                         Label:
+    //                       </TableCell>
+    //                       <TableCell
+    //                         align='right'
+    //                         className={classes.tableCell1}
+    //                       >
+    //                         Confidence:
+    //                       </TableCell>
+
+    //                     </TableRow>
+    //                   </TableHead>
+    //                   <TableBody className={classes.tableBody}>
+    //                     <TableRow className={classes.tableRow}>
+    //                       <TableCell
+    //                         component='th'
+    //                         scope='row'
+    //                         className={classes.tableCell}
+    //                       >
+    //                         {data.class}
+    //                       </TableCell>
+    //                       <TableCell
+    //                         align='right'
+    //                         className={classes.tableCell}
+    //                       >
+    //                         {confidence}%
+    //                       </TableCell>
+    //                     </TableRow>
+    //                   </TableBody>
+    //                 </Table>
+    //               </TableContainer>
+    //             </CardContent>
+    //           )}
+    //           {isLoading && (
+    //             <CardContent className={classes.detail}>
+    //               <CircularProgress
+    //                 color='secondary'
+    //                 className={classes.loader}
+    //               />
+    //               <Typography className={classes.title} variant='h6' noWrap>
+    //                 Processing
+    //               </Typography>
+    //             </CardContent>
+    //           )}
+    //         </Card>
+    //       </Grid>
+    //       {data && (
+    //         <Grid item className={classes.buttonGrid}>
+    //           <ColorButton
+    //             variant='contained'
+    //             className={classes.clearButton}
+    //             color='primary'
+    //             component='span'
+    //             size='large'
+    //             onClick={clearData}
+    //             startIcon={<Clear fontSize='large' />}
+    //           >
+    //             Try Again
+    //           </ColorButton>
+    //         </Grid>
+    //       )}
+    //     </Grid>
+    //   </Container>
+    // </React.Fragment>
+
+    <div className='home-body'>
+      <Grid
+        className={classes.gridContainer}
+        container
+        direction='row'
+        justifyContent='center'
+        alignItems='center'
+        spacing={2}
       >
-        <Grid
-          className={classes.gridContainer}
-          container
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
-          spacing={2}
-        >
-          <Grid item xs={12}>
-            <Card
-              className={`${classes.imageCard} ${
-                !image ? classes.imageCardEmpty : ""
-              }`}
-            >
-              {image && (
-                <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
-                    image={preview}
-                    component='image'
-                    title='Contemplative Reptile'
-                  />
-                </CardActionArea>
-              )}
-              {!image && (
-                <CardContent className={classes.content}>
-                  <DropzoneArea
-                    acceptedFiles={["image/*"]}
-                    dropzoneText={
-                      "Drag and drop an image of a potato plant leaf to process"
-                    }
-                    onChange={onSelectFile}
-                  />
-                </CardContent>
-              )}
-              {data && (
-                <CardContent className={classes.detail}>
-                  <TableContainer
-                    component={Paper}
-                    className={classes.tableContainer}
-                  >
-                    <Table
-                      className={classes.table}
-                      size='small'
-                      aria-label='simple table'
-                    >
-                      <TableHead className={classes.tableHead}>
-                        <TableRow className={classes.tableRow}>
-                          <TableCell className={classes.tableCell1}>
-                            Label:
-                          </TableCell>
-                          <TableCell
-                            align='right'
-                            className={classes.tableCell1}
-                          >
-                            Confidence:
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody className={classes.tableBody}>
-                        <TableRow className={classes.tableRow}>
-                          <TableCell
-                            component='th'
-                            scope='row'
-                            className={classes.tableCell}
-                          >
-                            {data.class}
-                          </TableCell>
-                          <TableCell
-                            align='right'
-                            className={classes.tableCell}
-                          >
-                            {confidence}%
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </CardContent>
-              )}
-              {isLoading && (
-                <CardContent className={classes.detail}>
-                  <CircularProgress
-                    color='secondary'
-                    className={classes.loader}
-                  />
-                  <Typography className={classes.title} variant='h6' noWrap>
-                    Processing
-                  </Typography>
-                </CardContent>
-              )}
-            </Card>
-          </Grid>
-          {data && (
-            <Grid item className={classes.buttonGrid}>
-              <ColorButton
-                variant='contained'
-                className={classes.clearButton}
-                color='primary'
-                component='span'
-                size='large'
-                onClick={clearData}
-                startIcon={<Clear fontSize='large' />}
-              >
-                Try Again
-              </ColorButton>
-            </Grid>
-          )}
+        <Grid item xs={12}>
+          <Card
+            className={`${classes.imageCard} ${
+              !image ? classes.imageCardEmpty : ""
+            }`}
+          >
+            {image && (
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={preview}
+                  component='image'
+                  title='Contemplative Reptile'
+                />
+              </CardActionArea>
+            )}
+            {!image && (
+              <CardContent className={classes.content}>
+                <DropzoneArea
+                  acceptedFiles={["image/*"]}
+                  dropzoneText={"I-drag at I-drop ang larawan para ma-proceso"}
+                  onChange={onSelectFile}
+                />
+              </CardContent>
+            )}
+            {data && (
+              // <CardContent>
+              //   <TableContainer
+              //       component={Paper}
+              //       className={classes.tableContainer}
+              //     >
+              //       <Table
+              //         className={classes.table}
+              //         size='small'
+              //         aria-label='simple table'
+              //       >
+              //         <TableHead className={classes.tableHead}>
+              //           <TableRow className={classes.tableRow}>
+              //             <TableCell className={classes.tableCell1}>
+              //               Label:
+              //             </TableCell>
+              //             <TableCell
+              //               align='right'
+              //               className={classes.tableCell1}
+              //             >
+              //               Confidence:
+              //             </TableCell>
+
+              //           </TableRow>
+              //         </TableHead>
+              //         <TableBody className={classes.tableBody}>
+              //           <TableRow className={classes.tableRow}>
+              //             <TableCell
+              //               component='th'
+              //               scope='row'
+              //               className={classes.tableCell}
+              //             >
+              //               {data.class}
+              //             </TableCell>
+              //             <TableCell
+              //               align='right'
+              //               className={classes.tableCell}
+              //             >
+              //               {confidence}%
+              //             </TableCell>
+              //           </TableRow>
+              //         </TableBody>
+              //       </Table>
+              //     </TableContainer>
+              // </CardContent>
+
+              <div className='home-container'>
+                <div className='home-container-label'>
+                  <div className='home-container-label-1'>
+                    <h2>Name: </h2> <p>{data.class}</p>
+                  </div>
+                  <div className='home-container-label-2'>
+                    <h2>Accuracy: </h2> <p>{confidence}%</p>
+                  </div>
+                </div>
+                <hr />
+                <div className='home-definition'>
+                  <div className='home-definition-english'>
+                    <h2>Definition: </h2> <p>{definition}</p>
+                    <h2>Solution: </h2> <p>{solution}</p>
+                  </div>
+                  <div className='home-definition-tagalog'>
+                    <h2>Kahulugan: </h2> <p>{tagalog_definition}</p>
+                    <h2>Solusyon: </h2> <p>{tagalog_solution}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+            {isLoading && (
+              <CardContent className={classes.detail}>
+                <CircularProgress
+                  color='secondary'
+                  className={classes.loader}
+                />
+                <Typography className={classes.title} variant='h6' noWrap>
+                  Processing
+                </Typography>
+              </CardContent>
+            )}
+          </Card>
         </Grid>
-      </Container>
-    </React.Fragment>
+        {data && (
+          <Grid item className={classes.buttonGrid}>
+            <ColorButton
+              variant='contained'
+              className={classes.clearButton}
+              color='primary'
+              component='span'
+              size='large'
+              onClick={clearData}
+              startIcon={<Clear fontSize='large' />}
+            >
+              Try Again
+            </ColorButton>
+          </Grid>
+        )}
+      </Grid>
+    </div>
   )
 }
