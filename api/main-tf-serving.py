@@ -82,7 +82,7 @@ def getSolution(predicted):
 
 def getDefinition(predicted):
     if "Early Blight" in predicted:
-        return "refers to any of a variety of plant blights whose symptoms start to appear earlier in the growing season. a: a fungal disease leaf spot, especially on potatoes and tomatoes (Alternaria solani)"
+        return "refers to any of a variety of plant blights whose symptoms start to appear earlier in the growing season. a: a fungal disease leaf spot, especially on potatoes and tomatoes"
 
     elif "Healthy" in predicted:
         return "Healthy Crop!"
