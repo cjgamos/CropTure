@@ -48,7 +48,7 @@ def getSolution(predicted):
         return "Apply copper-based fungicides two weeks before disease appears or when weather forecasts predict a long period of wet weather for the best control. Alternatively, start treatment as soon as the disease appears and repeat every 7-10 days for as long as it takes."
 
     elif "Healthy" in predicted:
-        return "Healthy No Solution Needed."
+        return "The crop is healthy, and no possible solution or treatment is needed."
 
     elif "Late Blight" in predicted:
         return "Before planting, remove any volunteers from the garden and space plants far enough apart to allow for acceptable air circulation."

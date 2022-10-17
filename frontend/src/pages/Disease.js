@@ -226,7 +226,7 @@ function Disease() {
 
           <div
             className='disease-right disease bacterial-spot'
-            id='bacterialspot'
+             id='bacterialspot'
           >
             <div className='disease-right-content'>
               <h1 className='right-title'>Bacterial Spot</h1>
