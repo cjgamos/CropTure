@@ -25,16 +25,20 @@ function Disease() {
 
     currStickyPos = stickyElem.getBoundingClientRect().top + window.pageYOffset
     window.onscroll = function () {
-      if (window.pageYOffset > currStickyPos) {
-        stickyElem.style.position = "fixed"
-        stickyElem.style.top = "0px"
-        diseaseElem.style.position = "relative"
-        diseaseElem.style.float = "right"
-        explore.style.display = "block"
+      if (window.screen.width > 1175) {
+        if (window.pageYOffset > currStickyPos) {
+          stickyElem.style.position = "fixed"
+          stickyElem.style.top = "0px"
+          diseaseElem.style.position = "relative"
+          diseaseElem.style.float = "right"
+          explore.style.display = "block"
+        } else {
+          stickyElem.style.position = "relative"
+          stickyElem.style.top = "initial"
+          explore.style.display = "flex"
+        }
       } else {
-        stickyElem.style.position = "relative"
-        stickyElem.style.top = "initial"
-        explore.style.display = "flex"
+        console.log("Easter Egg")
       }
     }
   }, [])
