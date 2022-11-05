@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { makeStyles, withStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -28,6 +28,12 @@ import { DropzoneArea } from "material-ui-dropzone"
 import { common } from "@material-ui/core/colors"
 import Clear from "@material-ui/icons/Clear"
 
+// Camera
+import Webcam from "react-webcam"
+import Camera, { FACING_MODES, IMAGE_TYPES } from "react-html5-camera-photo"
+import "react-html5-camera-photo/build/css/index.css"
+
+// CSS
 import "../css/Home.css"
 
 require("dotenv").config()
@@ -165,7 +171,18 @@ export const ImageUpload = () => {
   const [data, setData] = useState()
   const [image, setImage] = useState(false)
   const [isLoading, setIsloading] = useState(false)
+
+  const [selectedFile2, setSelectedFile2] = useState()
+  const [preview2, setPreview2] = useState()
+  const [data2, setData2] = useState()
+  const [image2, setImage2] = useState(false)
+
+  // const [dataUri, setDataUri] = useState("")
   let confidence = 0
+
+  let img = null
+
+  // Camera
 
   // data variable
   let definition
@@ -182,6 +199,7 @@ export const ImageUpload = () => {
         url: process.env.REACT_APP_API_URL,
         data: formData,
       })
+      // console.log(formData)
       if (res.status === 200) {
         setData(res.data)
       }
@@ -201,7 +219,7 @@ export const ImageUpload = () => {
       setPreview(undefined)
       return
     }
-    const objectUrl = URL.createObjectURL(selectedFile)
+    let objectUrl = URL.createObjectURL(selectedFile)
     setPreview(objectUrl)
   }, [selectedFile])
 
@@ -223,6 +241,45 @@ export const ImageUpload = () => {
     setSelectedFile(files[0])
     setData(undefined)
     setImage(true)
+    console.log(files)
+  }
+
+  const onSelectFile2 = (files) => {
+    if (!files || files.length === 0) {
+      setSelectedFile(undefined)
+      setImage(false)
+      setData(undefined)
+      return
+    }
+    setSelectedFile(files)
+    setData(undefined)
+    setImage(true)
+    console.log(files)
+  }
+
+  // Camera
+
+  useEffect(() => {})
+
+  function dataURLtoFile(dataurl, filename) {
+    var arr = dataurl.split(","),
+      mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]),
+      n = bstr.length,
+      u8arr = new Uint8Array(n)
+
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n)
+    }
+
+    return new File([u8arr], filename, { type: mime })
+  }
+
+  function handleTakePhoto(dataUri) {
+    // Do stuff with the photo...
+    let file = dataURLtoFile(dataUri, "test.png")
+
+    onSelectFile2(file)
   }
 
   if (data) {
@@ -235,125 +292,6 @@ export const ImageUpload = () => {
   }
 
   return (
-    // <React.Fragment>
-    //   <Container
-    //     maxWidth={false}
-    //     className={classes.mainContainer}
-    //     disableGutters={true}
-    //   >
-    //     <Grid
-    //       className={classes.gridContainer}
-    //       container
-    //       direction='row'
-    //       justifyContent='center'
-    //       alignItems='center'
-    //       spacing={2}
-    //     >
-    //       <Grid item xs={12}>
-    //         <Card
-    //           className={`${classes.imageCard} ${
-    //             !image ? classes.imageCardEmpty : ""
-    //           }`}
-    //         >
-    //           {image && (
-    //             <CardActionArea>
-    //               <CardMedia
-    //                 className={classes.media}
-    //                 image={preview}
-    //                 component='image'
-    //                 title='Contemplative Reptile'
-    //               />
-    //             </CardActionArea>
-    //           )}
-    //           {!image && (
-    //             <CardContent className={classes.content}>
-    //               <DropzoneArea
-    //                 acceptedFiles={["image/*"]}
-    //                 dropzoneText={
-    //                   "Drag and drop an image of a potato plant leaf to process"
-    //                 }
-    //                 onChange={onSelectFile}
-    //               />
-    //             </CardContent>
-    //           )}
-    //           {data && (
-    //             <CardContent className={classes.detail}>
-    //               <TableContainer
-    //                 component={Paper}
-    //                 className={classes.tableContainer}
-    //               >
-    //                 <Table
-    //                   className={classes.table}
-    //                   size='small'
-    //                   aria-label='simple table'
-    //                 >
-    //                   <TableHead className={classes.tableHead}>
-    //                     <TableRow className={classes.tableRow}>
-    //                       <TableCell className={classes.tableCell1}>
-    //                         Label:
-    //                       </TableCell>
-    //                       <TableCell
-    //                         align='right'
-    //                         className={classes.tableCell1}
-    //                       >
-    //                         Confidence:
-    //                       </TableCell>
-
-    //                     </TableRow>
-    //                   </TableHead>
-    //                   <TableBody className={classes.tableBody}>
-    //                     <TableRow className={classes.tableRow}>
-    //                       <TableCell
-    //                         component='th'
-    //                         scope='row'
-    //                         className={classes.tableCell}
-    //                       >
-    //                         {data.class}
-    //                       </TableCell>
-    //                       <TableCell
-    //                         align='right'
-    //                         className={classes.tableCell}
-    //                       >
-    //                         {confidence}%
-    //                       </TableCell>
-    //                     </TableRow>
-    //                   </TableBody>
-    //                 </Table>
-    //               </TableContainer>
-    //             </CardContent>
-    //           )}
-    //           {isLoading && (
-    //             <CardContent className={classes.detail}>
-    //               <CircularProgress
-    //                 color='secondary'
-    //                 className={classes.loader}
-    //               />
-    //               <Typography className={classes.title} variant='h6' noWrap>
-    //                 Processing
-    //               </Typography>
-    //             </CardContent>
-    //           )}
-    //         </Card>
-    //       </Grid>
-    //       {data && (
-    //         <Grid item className={classes.buttonGrid}>
-    //           <ColorButton
-    //             variant='contained'
-    //             className={classes.clearButton}
-    //             color='primary'
-    //             component='span'
-    //             size='large'
-    //             onClick={clearData}
-    //             startIcon={<Clear fontSize='large' />}
-    //           >
-    //             Try Again
-    //           </ColorButton>
-    //         </Grid>
-    //       )}
-    //     </Grid>
-    //   </Container>
-    // </React.Fragment>
-
     <div className='home-body'>
       <Grid
         className={classes.gridContainer}
@@ -380,60 +318,32 @@ export const ImageUpload = () => {
               </CardActionArea>
             )}
             {!image && (
-              <CardContent className={classes.content}>
-                <DropzoneArea
-                  acceptedFiles={["image/*"]}
-                  dropzoneText={"I-drag at I-drop ang larawan para ma-proceso"}
-                  onChange={onSelectFile}
-                />
-              </CardContent>
+              <>
+                <div className='cameraZone'>
+                  <Camera
+                    idealResolution={{ width: 640, height: 480 }}
+                    imageType={IMAGE_TYPES.JPG}
+                    imageCompression={0.97}
+                    onTakePhoto={(dataUri) => {
+                      handleTakePhoto(dataUri)
+                    }}
+                  />
+                </div>
+                <div className='dropZone'>
+                  <CardContent className={classes.content}>
+                    <DropzoneArea
+                      // className='dropZoneName'
+                      acceptedFiles={["image/*"]}
+                      dropzoneText={
+                        "I-drag at I-drop ang larawan para ma-proceso"
+                      }
+                      onChange={onSelectFile}
+                    />
+                  </CardContent>
+                </div>
+              </>
             )}
             {data && (
-              // <CardContent>
-              //   <TableContainer
-              //       component={Paper}
-              //       className={classes.tableContainer}
-              //     >
-              //       <Table
-              //         className={classes.table}
-              //         size='small'
-              //         aria-label='simple table'
-              //       >
-              //         <TableHead className={classes.tableHead}>
-              //           <TableRow className={classes.tableRow}>
-              //             <TableCell className={classes.tableCell1}>
-              //               Label:
-              //             </TableCell>
-              //             <TableCell
-              //               align='right'
-              //               className={classes.tableCell1}
-              //             >
-              //               Confidence:
-              //             </TableCell>
-
-              //           </TableRow>
-              //         </TableHead>
-              //         <TableBody className={classes.tableBody}>
-              //           <TableRow className={classes.tableRow}>
-              //             <TableCell
-              //               component='th'
-              //               scope='row'
-              //               className={classes.tableCell}
-              //             >
-              //               {data.class}
-              //             </TableCell>
-              //             <TableCell
-              //               align='right'
-              //               className={classes.tableCell}
-              //             >
-              //               {confidence}%
-              //             </TableCell>
-              //           </TableRow>
-              //         </TableBody>
-              //       </Table>
-              //     </TableContainer>
-              // </CardContent>
-
               <div className='home-container'>
                 <div className='home-container-label'>
                   <div className='home-container-label-1'>

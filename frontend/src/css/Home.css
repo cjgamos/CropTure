@@ -71,3 +71,98 @@
   /* background-color: aqua; */
   margin: 5%;
 }
+
+.cameraZone {
+  display: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .home-body {
+    background-image: url("../img/bg1.png");
+
+    min-height: 900px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align: center;
+  }
+
+  .home-container {
+    margin: auto;
+    background-color: #fef9ea;
+    width: 100%;
+    max-height: auto;
+    height: 80vh;
+  }
+
+  .home-container hr {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home-container-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 2% 20%; */
+  }
+
+  .home-container-label-1 h2 {
+    font-size: 1em;
+  }
+
+  .home-container-label-1 p {
+    font-size: 1em;
+  }
+
+  .home-container-label-2 h2 {
+    font-size: 1em;
+  }
+
+  .home-container-label-2 p {
+    font-size: 1em;
+  }
+
+  .home-definition {
+    padding: 0 40px;
+    /* text-align: justify; */
+    display: flex;
+  }
+
+  .home-definition-english div {
+    text-align: left !important;
+    /* margin: auto; */
+  }
+
+  .home-definition-english h2 {
+    font-size: 1.1em;
+  }
+
+  .home-definition-english p {
+    font-size: 12px;
+  }
+
+  .home-definition-tagalog div {
+    text-align: left !important;
+  }
+
+  .home-definition-tagalog h2 {
+    font-size: 1.1em;
+  }
+
+  .home-definition-tagalog p {
+    font-size: 12px;
+  }
+
+  .cameraZone {
+    display: block;
+  }
+
+  .dropZone {
+    display: none;
+  }
+}

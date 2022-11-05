@@ -244,7 +244,7 @@
     overflow: hidden;
     background-image: url("../img/bg1.png");
 
-    min-height: 455vh;
+    min-height: 340vh;
 
     background-attachment: fixed;
     background-position: center;
@@ -272,6 +272,7 @@
   }
 
   .disease-content {
+    /* display: none; */
   }
 
   .disease-content h1 {
@@ -314,8 +315,8 @@
     border-radius: 50%;
     min-height: 120px;
     max-height: auto;
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: 110px;
     max-width: 100%;
     margin: 5% 2%;
 
@@ -339,28 +340,28 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    border-radius: 60px 0 60px 0;
+    border-radius: 50px;
     margin: auto;
     background-color: #fef9ea;
-    height: 35vh;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
+    height: 30vh;
+    width: 100vw;
   }
 
   .disease-left-content {
-    padding-right: 5%;
+    /* padding-right: 5%; */
   }
 
   .disease-left-content p {
     /* padding: 20px; */
     text-align: justify;
     /* text-indent: 10%; */
+    font-size: 9px;
   }
 
   .left-title {
     text-align: left;
-    padding: 1% 0;
+    padding: 2% 0;
+    font-size: 1.5em;
   }
 
   /* Right */
@@ -370,13 +371,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    border-radius: 60px 0 60px 0;
+    border-radius: 50px;
     margin: auto;
     background-color: #fef9ea;
-    height: 35vh;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
+    height: 30vh;
+    width: 100vw;
   }
 
   .disease-right-content {
@@ -384,12 +383,14 @@
   }
 
   .disease-right-content p {
+    font-size: 9px;
     text-align: justify;
   }
 
   .right-title {
     text-align: right;
-    padding: 1% 0;
+    padding: 2% 0;
+    font-size: 1.5em;
   }
 
   /* Blight */
