@@ -446,12 +446,20 @@ export const ImageUpload = () => {
                 <hr />
                 <div className='home-definition'>
                   <div className='home-definition-english'>
-                    <h2>Definition: </h2> <p>{definition}</p>
-                    <h2>Solution: </h2> <p>{solution}</p>
+                    <div>
+                      <h2>Definition: </h2> <p>{definition}</p>
+                    </div>
+                    <div>
+                      <h2>Solution: </h2> <p>{solution}</p>
+                    </div>
                   </div>
                   <div className='home-definition-tagalog'>
-                    <h2>Kahulugan: </h2> <p>{tagalog_definition}</p>
-                    <h2>Solusyon: </h2> <p>{tagalog_solution}</p>
+                    <div>
+                      <h2>Kahulugan: </h2> <p>{tagalog_definition}</p>
+                    </div>
+                    <div>
+                      <h2>Solusyon: </h2> <p>{tagalog_solution}</p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -57,7 +57,7 @@ p {
 .backgroundLandingPage2 {
   background-image: url("../img/bg5.png");
 
-  min-height: 2700px;
+  min-height: 2900px;
 
   background-attachment: fixed;
   background-position: center;
@@ -224,4 +224,240 @@ footer {
 
 footer h4 {
   padding: 0 0 1% 0;
+}
+
+@media screen and (max-width: 1175px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fef9ea;
+    /* width: auto !important; */
+  }
+
+  p {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    color: #376b4d;
+    text-decoration: none;
+  }
+
+  .backgroundLandingPage {
+    background-image: url("../img/bg1.png");
+
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align: center;
+  }
+
+  .backgroundLandingPage h1 {
+    /* font-family: 'Sacramento', cursive !important; */
+    color: #fef9ea;
+    font-size: 2em;
+    /* font-weight: bolder; */
+  }
+
+  .backgroundLandingPage h2 {
+    font-family: "Roboto Mono", monospace !important;
+    color: #aebbae;
+    font-size: 1.5em;
+  }
+
+  .backgroundLandingPage hr {
+    color: #fef9ea;
+    width: 50%;
+    margin: 1% auto;
+  }
+
+  .backgroundLandingPage img {
+    max-width: 100%;
+    width: 15%;
+    margin: 2% auto 0;
+  }
+
+  .backgroundLandingPage2 {
+    background-image: url("../img/bg5.png");
+
+    min-height: 1800px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content-1 {
+    text-align: center;
+    padding-top: 5%;
+    /* padding: 5% 0 80% 0; */
+  }
+
+  .content-1 h3 {
+    color: #aebbae;
+    /* font-size: 10000px; */
+  }
+
+  .content-1 h1 {
+    color: #376b4d;
+  }
+
+  .content-2 {
+    text-align: center;
+    /* padding-top: 5%;
+    padding-bottom: 5%; */
+    padding: 5% 0;
+  }
+
+  .content-2 h3 {
+    color: #98bb58;
+  }
+
+  .content-2 h1 {
+    color: #fef9ea;
+  }
+
+  .about-content-1 {
+    display: flex;
+    padding-top: 15%;
+    /* padding-bottom: 20%; */
+    color: #376b4d;
+    width: 60%;
+    margin: auto;
+  }
+
+  .about-content-1 img {
+    width: 100%;
+    display: none;
+  }
+
+  .about-content-1 div {
+    text-align: center;
+  }
+
+  .about-content-1 h1 {
+    padding-bottom: 10%;
+  }
+
+  .about-content-1 p {
+    width: 100%;
+    margin: auto;
+  }
+
+  .about-content-2 {
+    display: flex;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    color: #376b4d;
+    width: 60%;
+    margin: auto;
+  }
+
+  .about-content-2 img {
+    width: 100%;
+    display: none;
+  }
+
+  .about-content-2 div {
+    text-align: center;
+  }
+
+  .about-content-2 h1 {
+    padding-bottom: 10%;
+  }
+
+  .about-content-2 p {
+    width: 100%;
+    margin: auto;
+  }
+
+  .howto-content-1 {
+    background-color: #fef9ea;
+    border-radius: 10px;
+    display: flex;
+    /* padding-top: 15%; */
+    /* padding-bottom: 20%; */
+    color: #376b4d;
+    width: 60%;
+    margin: auto;
+    transition: all 0.3s ease 0s;
+  }
+
+  .howto-content-2 {
+    background-color: #fef9ea;
+    border-radius: 10px;
+    display: flex;
+    /* padding-top: 15%; */
+    /* padding-bottom: 20%; */
+    color: #376b4d;
+    width: 60%;
+    margin: 5% auto;
+    transition: all 0.3s ease 0s;
+  }
+
+  .howto-content-1 img {
+    margin: auto;
+    width: 100%;
+    display: none;
+  }
+
+  .howto-content-1 div {
+    padding: 10% 3%;
+    text-align: center;
+  }
+
+  .howto-content-1 h1 {
+    padding-bottom: 10%;
+    font-size: 1.5em;
+  }
+
+  .howto-content-1 p {
+    width: 90%;
+    margin: auto;
+  }
+
+  .howto-content-2 img {
+    margin: auto;
+    width: 100%;
+    display: none;
+  }
+
+  .howto-content-2 div {
+    padding: 10% 3%;
+    text-align: center;
+  }
+
+  .howto-content-2 h1 {
+    padding-bottom: 10%;
+    font-size: 1.5em;
+  }
+
+  .howto-content-2 p {
+    width: 90%;
+    margin: auto;
+  }
+
+  .howto-content-1:hover,
+  .howto-content-2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+  }
+
+  footer {
+    color: #fef9ea;
+    background-color: #376b4d;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 20px 0;
+  }
+
+  footer h4 {
+    padding: 0 0 1% 0;
+  }
 }

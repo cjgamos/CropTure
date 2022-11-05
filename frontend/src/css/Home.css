@@ -40,7 +40,7 @@
   /* text-align: justify; */
   display: flex;
 }
-
+/* 
 .home-definition-english {
   border-right: solid 1px #376b4d;
   width: 50%;
@@ -57,6 +57,17 @@
 
 .home-definition-tagalog h2 {
   margin: 3% auto;
+} */
+
+.home-definition-english div {
+  text-align: left !important;
+  /* background-color: blue; */
+  margin: 5%;
+  /* padding: 1%; */
 }
 
-
+.home-definition-tagalog div {
+  text-align: left !important;
+  /* background-color: aqua; */
+  margin: 5%;
+}

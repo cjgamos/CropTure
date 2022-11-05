@@ -60,7 +60,7 @@ function LandingPage() {
 
           <div className='howto-content-1'>
             <div>
-              <h1>STEP 1 (UNANG HAKBANG)</h1>
+              <h1>STEP 1 <br />(UNANG HAKBANG)</h1>
               <p>
                 Click the Get Started button at the bottom of the webpage to be
                 able to start and run the system.
@@ -77,7 +77,7 @@ function LandingPage() {
           <div className='howto-content-2'>
             <img src={howto2} alt='' />
             <div>
-              <h1>STEP 2 (PANGALAWANG HAKBANG)</h1>
+              <h1>STEP 2 <br />(PANGALAWANG HAKBANG)</h1>
               <p>
                 Minimize the current browser by tapping the box-icon on enabling
                 to drag the photo you have been taken.
@@ -91,7 +91,7 @@ function LandingPage() {
 
           <div className='howto-content-1'>
             <div>
-              <h1>STEP 3 (PANGATLONG HAKBANG)</h1>
+              <h1>STEP 3 <br />(PANGATLONG HAKBANG)</h1>
               <p>
                 Drag the image you have on the white box container of the
                 webpage to be able to scan it by the system.
@@ -107,7 +107,10 @@ function LandingPage() {
           <div className='howto-content-2'>
             <img src={howto4} alt='' />
             <div>
-              <h1>STEP 4 (PANG APAT NA HAKBANG)</h1>
+              <h1>
+                STEP 4 <br />
+                (PANG APAT NA HAKBANG)
+              </h1>
               <p>
                 Wait for the system to process your request, the result will
                 appear beneath the the container.
