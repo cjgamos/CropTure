@@ -282,6 +282,34 @@ export const ImageUpload = () => {
     onSelectFile2(file)
   }
 
+  const browserSupportsMedia = () => {
+    return (
+      navigator.mediaDevices.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.mzGetUserMedia
+    )
+  }
+
+  // function initGetUserMedia() {
+  //   navigator.mediaDevices = navigator.mediaDevices || {}
+  //   navigator.mediaDevices.getUserMedia =
+  //     navigator.mediaDevices.getUserMedia ||
+  //     function (constraints) {
+  //       let getUserMedia =
+  //         navigator.webkitGetUserMedia || navigator.mozGetUserMedia
+  //       if (!getUserMedia) {
+  //         return Promise.reject(
+  //           new Error("getUserMedia not supported by this browser")
+  //         )
+  //       } else {
+  //         return new Promise((resolve, reject) => {
+  //           getUserMedia.call(navigator, constraints, resolve, reject)
+  //         })
+  //       }
+  //     }
+  // }
+
   if (data) {
     confidence = (parseFloat(data.confidence) * 100).toFixed(2)
 
@@ -290,6 +318,8 @@ export const ImageUpload = () => {
     tagalog_definition = data.tagalog_definition
     tagalog_solution = data.tagalog_solution
   }
+
+  // initGetUserMedia()
 
   return (
     <div className='home-body'>

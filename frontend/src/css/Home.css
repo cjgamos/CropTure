@@ -73,7 +73,7 @@
 }
 
 .cameraZone {
-  display: none;
+  /* display: none; */
 }
 
 @media screen and (max-width: 1175px) {
@@ -163,6 +163,6 @@
   }
 
   .dropZone {
-    display: none;
+    /* display: none; */
   }
 }
