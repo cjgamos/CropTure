@@ -6,6 +6,8 @@ import howto1 from "../img/howto1.png"
 import howto2 from "../img/howto2.png"
 import howto3 from "../img/howto3.png"
 import howto4 from "../img/howto4.png"
+import what from "../img/What.png"
+import why from "../img/Why.png"
 
 function LandingPage() {
   return (
@@ -27,14 +29,15 @@ function LandingPage() {
         </div>
 
         <div className='about-content-1'>
-          <img src={vaselogo} alt='' />
+          <img src={what} alt='' />
           <div>
             <h1>WHAT IS CROPTURE?</h1>
             <p>
-              Cropture is a program which purpose is to identify crop diseases
-              through the use of built-in cameras on the user's device. Its
-              intention is to help the farmers to classify crop diseases more
-              efficiently.
+              Cropture is a system where users can upload or take a picture of
+              the disease-affected crop directly to their devices' cameras. It
+              is an innovative and automated way for farmers to detect, classify
+              and get possible diagnoses and treatments on their crops in
+              real-time
             </p>
           </div>
         </div>
@@ -43,13 +46,14 @@ function LandingPage() {
           <div>
             <h1>WHY USE CROPTURE?</h1>
             <p>
-              Cropture is embedded with deep learning which is a great technique
-              on teaching the program on what to do on its own. Through the use
-              of this, it gives further knowledge to the users especially for
-              farmers on a daily basis.
+              Cropture is a scientific-based platform for crop disease detection
+              and classification using Deep Learning techniques. With this, it
+              can generate more confidence for the farmers in a way that they
+              have an idea of what disease they are dealing with to take
+              appropriate action against it.
             </p>
           </div>
-          <img src={vaselogo} alt='' />
+          <img src={why} alt='' />
         </div>
 
         <div className='backgroundLandingPage2' id='howto'>
@@ -60,7 +64,10 @@ function LandingPage() {
 
           <div className='howto-content-1'>
             <div>
-              <h1>STEP 1 <br />(UNANG HAKBANG)</h1>
+              <h1>
+                STEP 1 <br />
+                (UNANG HAKBANG)
+              </h1>
               <p>
                 Click the Get Started button at the bottom of the webpage to be
                 able to start and run the system.
@@ -77,7 +84,10 @@ function LandingPage() {
           <div className='howto-content-2'>
             <img src={howto2} alt='' />
             <div>
-              <h1>STEP 2 <br />(PANGALAWANG HAKBANG)</h1>
+              <h1>
+                STEP 2 <br />
+                (PANGALAWANG HAKBANG)
+              </h1>
               <p>
                 Minimize the current browser by tapping the box-icon on enabling
                 to drag the photo you have been taken.
@@ -91,7 +101,10 @@ function LandingPage() {
 
           <div className='howto-content-1'>
             <div>
-              <h1>STEP 3 <br />(PANGATLONG HAKBANG)</h1>
+              <h1>
+                STEP 3 <br />
+                (PANGATLONG HAKBANG)
+              </h1>
               <p>
                 Drag the image you have on the white box container of the
                 webpage to be able to scan it by the system.

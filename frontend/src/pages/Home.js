@@ -196,7 +196,7 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile)
       let res = await axios({
         method: "post",
-        url: process.env.REACT_APP_API_URL,
+        url: "https://us-central1-cropture.cloudfunctions.net/predict",
         data: formData,
       })
       // console.log(formData)
