@@ -76,6 +76,12 @@
   display: none;
 }
 
+.outputEighty {
+  text-align: center;
+  justify-content: center;
+  padding-top: 25%;
+}
+
 @media screen and (max-width: 1175px) {
   .home-body {
     background-image: url("../img/bg1.png");

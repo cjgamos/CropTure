@@ -57,7 +57,7 @@ p {
 .backgroundLandingPage2 {
   background-image: url("../img/bg5.png");
 
-  min-height: 2900px;
+  min-height: 2200px;
 
   background-attachment: fixed;
   background-position: center;
@@ -285,7 +285,7 @@ footer h4 {
   .backgroundLandingPage2 {
     background-image: url("../img/bg5.png");
 
-    min-height: 1800px;
+    min-height: 1200px;
 
     background-attachment: fixed;
     background-position: center;

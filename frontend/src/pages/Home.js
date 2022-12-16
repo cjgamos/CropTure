@@ -196,7 +196,7 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile)
       let res = await axios({
         method: "post",
-        url: "https://us-central1-cropture.cloudfunctions.net/predict",
+        url: process.env.REACT_APP_API_URL,
         data: formData,
       })
       // console.log(formData)
@@ -275,6 +275,107 @@ export const ImageUpload = () => {
     return new File([u8arr], filename, { type: mime })
   }
 
+  function showOutput(data) {
+    if (confidence <= 95 && confidence >= 90) {
+      console.log("This is 80%")
+      return (
+        <div className='home-container'>
+          <div className='home-container-label'>
+            <div className='home-container-label-1'></div>
+            <div>
+              <h2 className='outputEighty'>Retake Picture!</h2>
+            </div>
+            <div className='home-container-label-2'></div>
+          </div>
+          <hr />
+          {/* <div className='home-definition'>
+            <div className='home-definition-english'>
+              <div>
+                <h2>Definition: </h2> <p>-</p>
+              </div>
+              <div>
+                <h2>Solution: </h2> <p>-</p>
+              </div>
+            </div>
+            <div className='home-definition-tagalog'>
+              <div>
+                <h2>Kahulugan: </h2> <p>-</p>
+              </div>
+              <div>
+                <h2>Solusyon: </h2> <p>-</p>
+              </div>
+            </div>
+          </div> */}
+        </div>
+      )
+    } else if (confidence <= 90) {
+      console.log("This is 70%")
+      return (
+        <div className='home-container'>
+          <div className='home-container-label'>
+            <div className='home-container-label-1'></div>
+            <div>
+              <h2 className='outputEighty'>No data found!</h2>
+            </div>
+            <div className='home-container-label-2'></div>
+          </div>
+          <hr />
+          {/* <div className='home-definition'>
+            <div className='home-definition-english'>
+              <div>
+                <h2>Definition: </h2> <p>-</p>
+              </div>
+              <div>
+                <h2>Solution: </h2> <p>-</p>
+              </div>
+            </div>
+            <div className='home-definition-tagalog'>
+              <div>
+                <h2>Kahulugan: </h2> <p>-</p>
+              </div>
+              <div>
+                <h2>Solusyon: </h2> <p>-</p>
+              </div>
+            </div>
+          </div> */}
+        </div>
+      )
+    } else {
+      console.log("This is 90%")
+      return (
+        <div className='home-container'>
+          <div className='home-container-label'>
+            <div className='home-container-label-1'>
+              <h2>Name: </h2> <p>{data.class}</p>
+            </div>
+            <div className='home-container-label-2'>
+              <h2>Accuracy: </h2> <p>{confidence}%</p>
+            </div>
+          </div>
+          <hr />
+          <div className='home-definition'>
+            <div className='home-definition-english'>
+              <div>
+                <h2>Definition: </h2> <p>{definition}</p>
+              </div>
+              <div>
+                <h2>Solution: </h2> <p>{solution}</p>
+              </div>
+            </div>
+            <div className='home-definition-tagalog'>
+              <div>
+                <h2>Kahulugan: </h2> <p>{tagalog_definition}</p>
+              </div>
+              <div>
+                <h2>Solusyon: </h2> <p>{tagalog_solution}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+
   function handleTakePhoto(dataUri) {
     // Do stuff with the photo...
     let file = dataURLtoFile(dataUri, "test.png")
@@ -318,8 +419,6 @@ export const ImageUpload = () => {
     tagalog_definition = data.tagalog_definition
     tagalog_solution = data.tagalog_solution
   }
-
-  // initGetUserMedia()
 
   return (
     <div className='home-body'>
@@ -365,7 +464,7 @@ export const ImageUpload = () => {
                       // className='dropZoneName'
                       acceptedFiles={["image/*"]}
                       dropzoneText={
-                        "I-drag at I-drop ang larawan para ma-proceso"
+                        "I-drag at I-drop ang larawan para ma-proseso"
                       }
                       onChange={onSelectFile}
                     />
@@ -373,37 +472,7 @@ export const ImageUpload = () => {
                 </div>
               </>
             )}
-            {data && (
-              <div className='home-container'>
-                <div className='home-container-label'>
-                  <div className='home-container-label-1'>
-                    <h2>Name: </h2> <p>{data.class}</p>
-                  </div>
-                  <div className='home-container-label-2'>
-                    <h2>Accuracy: </h2> <p>{confidence}%</p>
-                  </div>
-                </div>
-                <hr />
-                <div className='home-definition'>
-                  <div className='home-definition-english'>
-                    <div>
-                      <h2>Definition: </h2> <p>{definition}</p>
-                    </div>
-                    <div>
-                      <h2>Solution: </h2> <p>{solution}</p>
-                    </div>
-                  </div>
-                  <div className='home-definition-tagalog'>
-                    <div>
-                      <h2>Kahulugan: </h2> <p>{tagalog_definition}</p>
-                    </div>
-                    <div>
-                      <h2>Solusyon: </h2> <p>{tagalog_solution}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+            {data && showOutput(data)}
             {isLoading && (
               <CardContent className={classes.detail}>
                 <CircularProgress

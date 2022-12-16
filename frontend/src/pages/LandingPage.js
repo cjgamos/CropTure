@@ -69,19 +69,19 @@ function LandingPage() {
                 (UNANG HAKBANG)
               </h1>
               <p>
-                Click the Get Started button at the bottom of the webpage to be
-                able to start and run the system.
+                Click the Get Started button at the upper right portion of the
+                webpage to be able to start and run the system.
                 <br />
                 <br />
-                (Pindutin and Get Started button na matatagpuan sa bandang
-                ilalim na parte ng webpage para maumpisahan at tumakbo na ang
-                sytem.)
+                (Pindutin ang Get Started button na matatagpuan sa kanang
+                bahaging parte ng webpage para maumpisahan at tumakbo ang
+                sistema.)
               </p>
             </div>
             <img src={howto1} alt='' />
           </div>
 
-          <div className='howto-content-2'>
+          {/* <div className='howto-content-2'>
             <img src={howto2} alt='' />
             <div>
               <h1>
@@ -97,40 +97,40 @@ function LandingPage() {
                 upang ma-drag ang litrato na iyong kinuhanan.)
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div className='howto-content-1'>
+          <div className='howto-content-2'>
             <div>
               <h1>
-                STEP 3 <br />
-                (PANGATLONG HAKBANG)
+                STEP 2 <br />
+                (PANGALAWANG HAKBANG)
               </h1>
               <p>
                 Drag the image you have on the white box container of the
                 webpage to be able to scan it by the system.
                 <br />
                 <br />
-                (I-drag ang letrato sa puting kahon na lalagyan ng webpage para
-                ito ay ma-scan ng system.)
+                (I-drag ang larawan sa puting kahon na lalagyan ng webpage para
+                ito ay ma-scan ng sistema.)
               </p>
             </div>
             <img src={howto3} alt='' />
           </div>
 
-          <div className='howto-content-2'>
+          <div className='howto-content-1'>
             <img src={howto4} alt='' />
             <div>
               <h1>
-                STEP 4 <br />
-                (PANG APAT NA HAKBANG)
+                STEP 3 <br />
+                (PANGATLONG HAKBANG)
               </h1>
               <p>
                 Wait for the system to process your request, the result will
                 appear beneath the the container.
                 <br />
                 <br />
-                (Antayin matapos ng system ang proseso, ang resulta ay makikita
-                sa ibabang parte ng lalagyan.)
+                (Hintayin na matapos ng sistema ang proseso, ang resulta ay
+                makikita sa ibabang parte ng lalagyan.)
               </p>
             </div>
           </div>
